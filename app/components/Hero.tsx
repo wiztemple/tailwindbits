@@ -9,7 +9,7 @@ const Hero = () => {
           into your Tailwind CSS project with a quick copy and paste.
         </h2>
       </div>
-      <div>ss</div>
+      <div>&nbsp;</div>
     </div>
   );
 };
