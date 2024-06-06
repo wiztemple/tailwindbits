@@ -5,11 +5,13 @@ import Hero from "./components/Hero";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "./components/Footer";
+import MobileMenu from "./components/MobileMenu";
 
 export default function Home() {
   return (
     <main className="bg-white dark:bg-[#0B1023]">
       <Navbar />
+      <MobileMenu navType="home" />
       <Hero />
       <div className="sm:px-10 px-5">
         <div className="grid sm:grid-cols-2 grid-cols-1 pb-5">

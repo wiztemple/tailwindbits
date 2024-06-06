@@ -25,7 +25,7 @@ function AccordionComponent({
     <div className="py-2">
       <h2>
         <button
-          className="flex items-center w-full font-bold text-left sm:text-lg text-sm py-2 gap-3 tracking-[1px] uppercase leading-5"
+          className="flex items-center w-full font-bold text-left sm:text-lg text-sm py-2 gap-3 tracking-[1px] leading-5"
           onClick={(e) => {
             e.preventDefault();
             setAccordionOpen(!accordionOpen);
@@ -45,7 +45,7 @@ function AccordionComponent({
             >
               <path
                 d="M0 14.4844V1.93555C0 1.05664 1.02539 0.617188 1.66016 1.25195L7.91016 7.50195C8.30078 7.89258 8.30078 8.52734 7.91016 8.91797L1.66016 15.168C1.02539 15.8027 0 15.3633 0 14.4844Z"
-                fill="#FFF"
+                fill="#162534"
               />
             </svg>
           <span
@@ -80,27 +80,34 @@ function AccordionComponent({
 const Accordion = () => {
   const faqs = [
     {
-      title: "LASERTAG ABLAUF",
+      title: "What is the pricing structure for your SaaS product?",
       text: (
         <>
           <p className="text-[15px]">
-            Bei der Ankunft in der Lasertag Arena werdet ihr von unserem
-            freundlichen Team herzlich empfangen. Nach einer kurzen Begrüßung
-            und einer Einweisung in die Regeln des Spiels werdet ihr mit euren
+          Our SaaS product offers three pricing tiers: Basic, Pro, and Enterprise. The Basic plan starts at $10 per month and includes essential features. The Pro plan is $30 per month, offering advanced features and integrations. The Enterprise plan is custom-priced to fit large organizations' needs, including premium support and additional customizations. Discounts are available for annual subscriptions.
           </p>
         </>
       ),
       active: false,
     },
     {
-      title: "HOLOGATE ABLAUF",
+      title: "How secure is my data with your SaaS product?",
       text: (
         <>
           <p className="text-[15px]">
-            Wenn ihr die Hologate Arena besucht, erwartet euch ein fantastisches
-            VR-Erlebnis, das von der Ankunft bis zum Ende des Aufenthalts für
-            Begeisterung sorgt. Sobald ihr angekommen seid, werdet ihr herzlich
-            von unserem freundlichen Team begrüßt. Ihr erhaltet eine kurze
+          Security is our top priority. We use industry-standard encryption to protect your data both in transit and at rest. Our servers are hosted in secure data centers with 24/7 monitoring and regular security audits. Additionally, we comply with major data protection regulations such as GDPR and HIPAA to ensure your information remains confidential and secure.
+          </p>
+          
+        </>
+      ),
+      active: false,
+    },
+    {
+      title: "Can I integrate your SaaS product with other tools we use?",
+      text: (
+        <>
+          <p className="text-[15px]">
+          Yes, our SaaS product offers robust integration capabilities with a variety of third-party tools. We provide APIs and pre-built integrations for popular services like CRM systems, email marketing platforms, and project management tools. If you need a specific integration not currently supported, our development team can work with you to create a custom solution.
           </p>
           
         </>

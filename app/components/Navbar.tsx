@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 const Navbar = ({ border = true }: { border?: boolean }) => {
   return (
     <nav
-      className={`w-screen h-[60px] fixed top-0 z-50 sm:px-10 px-5 flex justify-between items-center bg-snow-100 dark:bg-[#0B1023] ${
+      className={`w-screen h-[60px] fixed top-0 z-50 sm:px-10 px-5 sm:flex hidden justify-between items-center bg-snow-100 dark:bg-[#0B1023] ${
         border ? "border-b border-b-slate-200 dark:border-b-gray-700" : ""
       }`}
     >
