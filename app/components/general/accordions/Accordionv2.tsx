@@ -33,45 +33,73 @@ function AccordionComponent({
           aria-expanded={accordionOpen}
           aria-controls={`accordion-text-${id}`}
         >
-          <span className={`block ${accordionOpen ? "text-blue-700" : "text-gray-800"}`}>
+          <span
+            className={`block ${
+              accordionOpen ? "text-blue-700" : "text-gray-800"
+            }`}
+          >
             {title}
           </span>
-          <svg
-            className={`shrink-0 transform origin-center transition duration-200 ease-out ${
-              accordionOpen ? "!rotate-180" : ""
-            }`}
-            width="14"
-            height="8"
-            viewBox="0 0 14 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.21934 0.219534C0.0788894 0.360159 0 0.550783 0 0.749534C0 0.948284 0.0788894 1.13891 0.21934 1.27953L6.46934 7.52953C6.60997 7.66998 6.80059 7.74887 6.99934 7.74887C7.19809 7.74887 7.38871 7.66998 7.52934 7.52953L13.7793 1.27953C13.8489 1.20993 13.9042 1.12731 13.9418 1.03637C13.9795 0.94543 13.9989 0.847964 13.9989 0.749534C13.9989 0.651104 13.9795 0.553637 13.9418 0.4627C13.9042 0.371762 13.8489 0.289135 13.7793 0.219534C13.7097 0.149933 13.6271 0.094723 13.5362 0.0570555C13.4452 0.0193879 13.3478 -1.94029e-09 13.2493 0C13.1509 1.94029e-09 13.0534 0.0193879 12.9625 0.0570555C12.8716 0.094723 12.7889 0.149933 12.7193 0.219534L6.99934 5.93853L1.27934 0.219534C1.13871 0.0790835 0.948091 0.000193596 0.74934 0.000193596C0.550589 0.000193596 0.359965 0.0790835 0.21934 0.219534Z"
-              fill="black"
-            />
-          </svg>
+          {accordionOpen ? (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 20C4.47059 20 0 15.5294 0 10C0 4.47059 4.47059 0 10 0C15.5294 0 20 4.47059 20 10C20 15.5294 15.5294 20 10 20ZM10 1.17647C5.11765 1.17647 1.17647 5.11765 1.17647 10C1.17647 14.8824 5.11765 18.8235 10 18.8235C14.8824 18.8235 18.8235 14.8824 18.8235 10C18.8235 5.11765 14.8824 1.17647 10 1.17647Z"
+                fill="#9095B1"
+              />
+              <path
+                d="M4.70581 9.41177H15.294V10.5882H4.70581V9.41177Z"
+                fill="#9095B1"
+              />
+            </svg>
+          ) : (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 20C4.47059 20 0 15.5294 0 10C0 4.47059 4.47059 0 10 0C15.5294 0 20 4.47059 20 10C20 15.5294 15.5294 20 10 20ZM10 1.17647C5.11765 1.17647 1.17647 5.11765 1.17647 10C1.17647 14.8824 5.11765 18.8235 10 18.8235C14.8824 18.8235 18.8235 14.8824 18.8235 10C18.8235 5.11765 14.8824 1.17647 10 1.17647Z"
+                fill="#9095B1"
+              />
+              <path
+                d="M4.70581 9.4118H15.294V10.5883H4.70581V9.4118Z"
+                fill="#9095B1"
+              />
+              <path
+                d="M9.41187 4.70587H10.5883V15.2941H9.41187V4.70587Z"
+                fill="#9095B1"
+              />
+            </svg>
+          )}
         </button>
       </h2>
       <div
         id={`accordion-text-${id}`}
         role="region"
         aria-labelledby={`accordion-title-${id}`}
-        className={`grid text-black overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`grid text-sm text-black overflow-hidden transition-all duration-300 ease-in-out ${
           accordionOpen
             ? "grid-rows-[1fr] opacity-100"
             : "grid-rows-[0fr] opacity-0"
         }`}
       >
         <div className="overflow-hidden pl-4 bg-slate-50 border-t border-t-slate-200">
-          <div className="pb-6 pt-4">{children}</div>
+          <div className="pb-6 pt-4 sm:text-base text-sm">{children}</div>
         </div>
       </div>
     </div>
   );
 }
 
-const Accordion = () => {
+const Accordionv2 = () => {
   const faqs = [
     {
       title: "What is the pricing structure for your SaaS product?",
@@ -125,7 +153,7 @@ const Accordion = () => {
   ];
   return (
     <section className="sm:w-[600px] w-full">
-      <div className="divide-y divide-slate-200 border border-slate-200 mt-5 rounded-lg">
+      <div className="divide-y divide-slate-200 shadow mt-5 rounded-lg">
         {faqs.map((faq, index) => (
           <AccordionComponent
             key={index}
@@ -141,4 +169,4 @@ const Accordion = () => {
   );
 };
 
-export default Accordion;
+export default Accordionv2;

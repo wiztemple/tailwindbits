@@ -37,40 +37,38 @@ const DisplayLayout = ({
   return (
     <div>
       <div className="">
-        <div className="flex justify-between items-center border-b border-b-grey-200 rounded-tl-lg rounded-tr-lg pb-2">
-          <div>
-            <div className="flex p-1 space-x-1 bg-grey-100 rounded-xl">
-              <button
-                className={`w-fit py-1 flex items-center gap-x-1 px-3 text-sm leading-5 font-medium text-main-100 rounded-lg ${
-                  activeTab === "preview"
-                    ? "bg-white shadow"
-                    : "  hover:text-main-300"
-                }`}
-                onClick={() => setActiveTab("preview")}
-              >
-                <Image
-                  src="/eye.svg"
-                  width={20}
-                  height={15}
-                  alt="Open Eye Icon"
-                />
-                Preview
-              </button>
-              <button
-                className={`w-fit py-1 px-3 flex items-center gap-x-1 text-sm leading-5 font-medium text-main-100 rounded-lg ${
-                  activeTab === "code"
-                    ? "bg-white shadow"
-                    : "text-blue-100 hover:text-main-300"
-                }`}
-                onClick={() => setActiveTab("code")}
-              >
-                <Image src="/code.svg" width={20} height={17} alt="Code Icon" />
-                Code
-              </button>
-            </div>
+        <div className="sm:flex block justify-between items-center border-b border-b-grey-200 rounded-tl-lg rounded-tr-lg pb-1">
+          <div className="flex p-1 w-fit space-x-1 bg-grey-100 rounded-xl">
+            <button
+              className={`w-fit py-1 flex items-center gap-x-1 px-3 text-sm leading-5 font-medium text-main-100 rounded-lg ${
+                activeTab === "preview"
+                  ? "bg-white shadow"
+                  : "  hover:text-main-300"
+              }`}
+              onClick={() => setActiveTab("preview")}
+            >
+              <Image
+                src="/eye.svg"
+                width={20}
+                height={15}
+                alt="Open Eye Icon"
+              />
+              Preview
+            </button>
+            <button
+              className={`w-fit py-1 px-3 flex items-center gap-x-1 text-sm leading-5 font-medium text-main-100 rounded-lg ${
+                activeTab === "code"
+                  ? "bg-white shadow"
+                  : "text-blue-100 hover:text-main-300"
+              }`}
+              onClick={() => setActiveTab("code")}
+            >
+              <Image src="/code.svg" width={20} height={17} alt="Code Icon" />
+              Code
+            </button>
           </div>
-          {activeTab === "preview" && (
-            <div className="flex p-1 space-x-1 bg-grey-100 rounded-xl">
+          {/* {activeTab === "preview" && (
+            <div className="flex p-1 space-x-1 bg-grey-100 rounded-xl sm:mt-0 mt-2">
               <button
                 className={`flex items-center gap-x-1 py-1 px-2 hover:bg-white hover:shadow rounded-lg text-sm ${
                   activeView === "mobile"
@@ -109,8 +107,8 @@ const DisplayLayout = ({
                 <span>Desktop</span>
               </button>
             </div>
-          )}
-          <div className="flex">
+          )} */}
+          <div className="flex sm:mt-0 mt-2">
             <button
               onClick={handleCopyCode}
               className="hover:bg-gray-100 flex justify-center items-center w-10 h-10 rounded-xl"
@@ -134,7 +132,10 @@ const DisplayLayout = ({
         </div>
         <div className="py-2">
           {activeTab === "preview" && (
-            <div className={`preview-container ${activeView}`}>{children}</div>
+            // <div className={`preview-container ${activeView}`}>{children}</div>
+            <div className="flex justify-center">
+              <div className="">{children}</div>
+            </div>
           )}
           {activeTab === "code" && (
             <div className="bg-gray-800 p-4 rounded-xl shadow w-full overflow-scroll">

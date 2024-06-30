@@ -2,6 +2,7 @@ import DisplayLayout from "../../DisplayLayout";
 import Layout from "../../Layout";
 import Accordion from "./Accordion";
 import { AccordionCodeStrings } from "./AccordionCodeStrings";
+import Accordionv2 from "./Accordionv2";
 
 const Accordions = () => {
   const accordionCodeString = AccordionCodeStrings["Accordion"];
@@ -13,7 +14,7 @@ const Accordions = () => {
           <Accordion />
         </DisplayLayout>
         <DisplayLayout fileName="Accordions" codeString={accordionCodeString}>
-          <Accordion />
+          <Accordionv2 />
         </DisplayLayout>
       </div>
     </Layout>

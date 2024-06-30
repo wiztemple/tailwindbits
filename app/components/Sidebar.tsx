@@ -146,7 +146,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
           </button>
 
           {subMenuOpen && (
-            <div className="my-2 ml-6 flex flex-col space-y-4 border-l-2 border-l-slate-200 pl-3">
+            <div className="my-2 ml-6 flex flex-col space-y-4 border-l border-l-slate-200 pl-3">
               {item.subMenuItems?.map((subItem, idx) => (
                 <Link
                   key={idx}
